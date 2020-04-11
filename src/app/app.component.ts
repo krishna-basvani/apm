@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 
 import { AuthService } from './user/auth.service';
 
+// Adding Routing module
+import { Router} from '@angular/router';
+
 @Component({
   selector: 'pm-root',
   templateUrl: './app.component.html',
@@ -21,10 +24,11 @@ export class AppComponent {
     return '';
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router:Router) { }
 
   logOut(): void {
     this.authService.logout();
+    this.router.navigate(['/welcome']);
     console.log('Log out');
   }
 }

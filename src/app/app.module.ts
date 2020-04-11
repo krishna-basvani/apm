@@ -17,6 +17,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { ProductModule } from './products/product.module';
 import { UserModule } from './user/user.module';
 import { MessageModule } from './messages/message.module';
+import { LoginComponent } from './user/login.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { MessageModule } from './messages/message.module';
     InMemoryWebApiModule.forRoot(ProductData, { delay: 1000 }),
     RouterModule.forRoot([
       {path:'welcome', component:WelcomeComponent},
+      {path:'login', component:LoginComponent},
       {path:'', redirectTo:'products',pathMatch:'full'},
       {path:'**', component:PageNotFoundComponent}
     ]),
